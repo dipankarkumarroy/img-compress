@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Compressor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
 
+    #inputImage {
+      display: none;
+    }
+
+    #outputCanvas {
+      border: 1px solid #ddd;
+      margin-top: 20px;
+    }
+
+    input[type="range"] {
+      width: 80%;
+      margin-top: 10px;
+    }
+    .btn-container {
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #totalSize {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Compressor</h1>
+
+  <input type="file" id="inputImage" accept="image/*" onchange="updateImage()">
+  <button onclick="document.getElementById('inputImage').click()">Choose Image</button>
+  <br>
+
+  <label for="sizeRange">Adjust Size:</label>
+  <input type="range" id="sizeRange" min="0" max="100" value="0" onchange="updateImage()">
+  <br>
+
+  <label for="redRange">Adjust Red:</label>
+  <input type="range" id="redRange" min="0" max="255" value="0" onchange="updateImage()">
+  <br>
+
+  <label for="greenRange">Adjust Green:</label>
+  <input type="range" id="greenRange" min="0" max="255" value="0" onchange="updateImage()">
+  <br>
+
+  <label for="blueRange">Adjust Blue:</label>
+  <input type="range" id="blueRange" min="0" max="255" value="0" onchange="updateImage()">
+  <br>
+
+  <label for="rotationRange">Rotate Image:</label>
+  <input type="range" id="rotationRange" min="0" max="360" value="0" onchange="updateImage()">
+  <br>
+
+  <label for="canvasWidth">Canvas Width:</label>
+  <input type="number" id="canvasWidth" value="400" onchange="updateImage()">
+  <br>
+
+  <label for="canvasHeight">Canvas Height:</label>
+  <input type="number" id="canvasHeight" value="300" onchange="updateImage()">
+  <br>
+
+  <label for="imageX">Move Image Horizontally:</label>
+  <input type="range" id="imageX" min="-100" max="100" value="0" onchange="updateImage()">
+  <br>
+
+  <label for="imageY">Move Image Vertically:</label>
+  <input type="range" id="imageY" min="-100" max="100" value="0" onchange="updateImage()">
+  <br>
+
+  <canvas id="outputCanvas"></canvas>
+  <div id="totalSize"></div>
+  <br>
+  <button onclick="downloadImage()">Download Image</button>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
