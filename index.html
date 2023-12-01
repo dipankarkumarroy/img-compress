@@ -75,14 +75,6 @@
   <input type="range" id="rotationRange" min="0" max="360" value="0" onchange="updateImage()">
   <br>
 
-  <label for="canvasWidth">Canvas Width:</label>
-  <input type="number" id="canvasWidth" value="400" onchange="updateImage()">
-  <br>
-
-  <label for="canvasHeight">Canvas Height:</label>
-  <input type="number" id="canvasHeight" value="300" onchange="updateImage()">
-  <br>
-
   <label for="imageX">Move Image Horizontally:</label>
   <input type="range" id="imageX" min="-100" max="100" value="0" onchange="updateImage()">
   <br>
@@ -90,7 +82,15 @@
   <label for="imageY">Move Image Vertically:</label>
   <input type="range" id="imageY" min="-100" max="100" value="0" onchange="updateImage()">
   <br>
+  
+  <label for="canvasWidth">Canvas Width:</label>
+  <input type="number" id="canvasWidth" value="400" onchange="updateImage()">
+  <br>
 
+  <label for="canvasHeight">Canvas Height:</label>
+  <input type="number" id="canvasHeight" value="300" onchange="updateImage()">
+  <br>
+  
   <canvas id="outputCanvas"></canvas>
   <div id="totalSize"></div>
   <br>
